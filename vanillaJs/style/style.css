@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 html, body {
@@ -80,4 +81,24 @@ html, body {
 
 .show {
     top: 0;
+}
+
+
+.menu-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px;
+}
+
+.menu-container a {
+    background-color: rgb(128, 128, 128);
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 5px;
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    width: 50%;
+    
 }
