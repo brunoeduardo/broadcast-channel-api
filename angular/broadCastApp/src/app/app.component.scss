@@ -1,23 +1,5 @@
-.title {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 25px;
-    margin-top: 5px;
-    text-align: center;
-}
-
-.form-container {
-    margin: 10px 0
-}
-
-.form-text {
-    padding: 5px;
+.main-container {
+    margin: auto;
+    max-width: 400px;
     width: 100%;
-}
-
-.form-radio {
-    display: flex;
-    font-size: 14px;
-    justify-content: space-between;
-    margin: 15px 0;
 }

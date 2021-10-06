@@ -10,6 +10,12 @@ html, body {
     padding: 5px;
 }
 
+h1 {
+    border-bottom: 1px solid;
+    font-size: 26px;
+    margin: 20px 0;
+}
+
 .main-container {
     margin: auto;
     max-width: 400px;
