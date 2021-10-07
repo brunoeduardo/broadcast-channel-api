@@ -7,6 +7,9 @@ import { Tab1Component } from './pages/tab1/tab1.component';
 import { Tab2Component } from './pages/tab2/tab2.component';
 import { SenderComponent } from './pages/sender/sender.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +21,17 @@ import { MenuComponent } from './components/menu/menu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function appRoutes(appRoutes: any, arg1: { enableTracing: true; }): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+  throw new Error('Function not implemented.');
+}
+

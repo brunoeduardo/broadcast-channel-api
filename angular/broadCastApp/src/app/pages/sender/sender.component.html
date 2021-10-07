@@ -1,25 +1,25 @@
 <div class="main-container">
         <h1 class="title">Send message to another tab</h1>
-        <form class="form-container">
-            <input class="form-text" id="textMessage" type="text" placeholder="Message..." required>
+        <form class="form-container" [formGroup]="messageForm">
+            <input class="form-text" formControlName="messageText" type="text" placeholder="Message..." required>
             <div class="form-radio">
                 <div>
-                    <input type="radio" id="tab1" name="messageTo" value="tab1" checked>
+                    <input type="radio" formControlName="messageTextTo" id="tab1" name="messageTextTo" value="tab1" checked>
                     <label for="tab1">To Tab 1</label>
                 </div>
                 <div>
-                    <input type="radio" id="tab1to2" name="messageTo" value="tab1to2">
+                    <input type="radio" formControlName="messageTextTo" id="tab1to2" name="messageTextTo" value="tab1to2">
                     <label for="tab1to2">Tab 1 to Tab 2</label>
                 </div>
                 <div>
-                    <input type="radio" id="tab2" name="messageTo" value="tab2">
+                    <input type="radio" formControlName="messageTextTo" id="tab2" name="messageTextTo" value="tab2">
                     <label for="tab2">To Tab 2</label>
                 </div>
                 <div>
-                    <input type="radio" id="both" name="messageTo" value="both">
+                    <input type="radio" formControlName="messageTextTo" id="both" name="messageTextTo" value="both">
                     <label for="both">To both</label>
                 </div>
             </div>
-            <button class="btn" type="button" onclick="sendMessage()">Send</button>
+            <button class="btn" (click)="sendMessage()">Send</button>
         </form>
     </div>

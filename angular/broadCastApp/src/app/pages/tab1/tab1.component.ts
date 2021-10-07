@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BroadcastService } from 'src/app/service/broadcast.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab1Component implements OnInit {
 
-  constructor() { }
+  messages = [];
 
-  ngOnInit(): void {
+  constructor(private broadcastService: BroadcastService) {
   }
 
+  ngOnInit(): void {
+    this.broadcastService.messagesOfType('tab1')
+  }
 }

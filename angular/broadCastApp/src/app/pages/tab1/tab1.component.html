@@ -4,7 +4,9 @@
   <div id="redirectedMessage" class="redirected-message-container">Redirected message to Tab 2</div>
   <div class="main-container">
     <h3 class="sub-title">Messages:</h3>
-    <div id="messageText" class="messageText-container"></div>
+    <div class="messageText-container">
+      <div *ngFor="let text of messages"></div>
+    </div>
     <button class="btn" type="button" onclick="closeConnection()">Close connection</button>
   </div>
 </div>
