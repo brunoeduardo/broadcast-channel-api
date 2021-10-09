@@ -1,9 +1,14 @@
 <div class="main-container">
   <h1>Tab 2</h1>
-  <div id="connectionClosed" class="connection-closed">Connection closed</div>
+  <div  [ngClass]="{'show': showConnectionClosed}"  class="connection-closed">Connection closed</div>
   <div class="main-container">
     <h3 class="sub-title">Messages:</h3>
-    <div id="messageText" class="messageText-container"></div>
-    <button class="btn" type="button" onclick="closeConnection()">Close connection</button>
-  </div> 
+    <div class="messageText-container">
+      <div *ngFor="let text of messages">
+        {{text}}
+      </div>
+    </div>
+    <button class="btn" type="button" (click)="closeConnection()">Close connection</button>
+  </div>
 </div>
+

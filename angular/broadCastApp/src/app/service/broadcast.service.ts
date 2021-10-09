@@ -1,38 +1,26 @@
 import { Injectable, NgZone } from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { BroadcastMessage } from '../models/broadcast-message';
 import {filter} from 'rxjs/operators';
-import { runInZone } from '../run-in-zone';
 
 @Injectable({
   providedIn: 'root'
 })
 
-interface BroadcastMessage {
-  type: string;
-  payload: any;
-}
-
 export class BroadcastService {
 
-  private broadcastChannel: BroadcastChannel;
-  private onMessage = new Subject<any>();
+  constructor() {
+  }
 
-  constructor(
-    broadcastChannelName: string = "message_channel",
-    private ngZone: NgZone
-  ) {
-    this.broadcastChannel = new BroadcastChannel(broadcastChannelName);
-    this.broadcastChannel.onmessage = (message) => this.onMessage.next(message.data);
+  public broadcastChannel!: BroadcastChannel;
+
+  newChannel(nameChannel: string) {
+    this.broadcastChannel = new BroadcastChannel(nameChannel);
+    return this.broadcastChannel;
   }
 
   publish(message: BroadcastMessage): void {
     this.broadcastChannel.postMessage(message);
   }
 
-  messagesOfType(type: string): Observable<BroadcastMessage> {
-    return this.onMessage.pipe(
-      runInZone(this.ngZone),
-      filter(message => message.type === type)
-    );
-  }
 }

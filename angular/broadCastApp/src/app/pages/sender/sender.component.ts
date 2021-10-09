@@ -20,11 +20,10 @@ export class SenderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.broadcastService.newChannel('connection_channel')
   }
 
   sendMessage() {
-    console.log(this.messageForm.value);
-
     this.broadcastService.publish({
       type: this.messageForm.value.messageTextTo,
       payload: this.messageForm.value.messageText
