@@ -1,27 +1,19 @@
-# BroadCastApp
+# BroadCast API
+ 
+Applying broadcast api in a project. My objective is to understand how I can pass information between browser tabs in the same project.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
+I created two projects, they have the same layout and functionalities but one was code in vanilla javascript and other in Angular.
 
-## Development server
+The project was separated into three parts. The main page has a form to write and choose for who sends the message.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The tab1 and tab2 files are able to receive the message sent by the main file and display on the page. Here tab1 file has an additional functionality, send message to tab2 if requested.
 
-## Code scaffolding
+When the pages are open, a broadcast connection is started, in this moment they are able to receive messages, besides that theses files has a button to close the connection and not receive more messages
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Broadcast API on Angular
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+As Angular has its own lifecycle and the broadcast api runs off side it, I need to use the NgZone to notify Angular that a new message has been received.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## References
+[Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API#broadcast_channel_interface)
